@@ -55,7 +55,7 @@
 
 	в) description_comment (VARCHAR)
 
-	г)comment_count (INTEGER NOT NULL)
+	г) comment_count (INTEGER NOT NULL)
 	
 
 	Поля таблицы Mark:
@@ -66,5 +66,5 @@
 
 	в) value_of_mark (INTEGER NOT NULL)
 
-	г)mark_count (INTEGER NOT NULL)
+	г) mark_count (INTEGER NOT NULL)
 
