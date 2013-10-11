@@ -12,13 +12,15 @@
 
 Стороннее программное обеспечение, обеспечивающее работу приложения:
 
-1) База данных: 
+Описание базы данных: 
 
-СУБД: MySQL 5.5. 
+СУБД: MySQL 5.5 
 
-Движок для хранения таблиц – InnoDB.
+Движок для хранения таблиц – InnoDB. Данный движок поддерживает внешние ключи, транзакции, и поддерживается практически всеми видами СУБД.
 
-Количество таблиц: 2 (первая содержит - данные о пользователе, вторая - комментарии и оценки).
+Имя базы данных: Places
+
+Количество таблиц: 4 (первая содержит - данные о пользователе, вторая - информация о заведении, третья - информация о комментариях, четвертая - информация о оценки).
 
 	Поля таблицы User: 
 
@@ -29,7 +31,7 @@
 	в) password - пароль для авторизации (VARCHAR 20)
 
 
-	Поля таблицы Place
+	Поля таблицы Place:
 
 	a) user_id (INTEGER NOT NULL PRIMARY KEY)
 
@@ -45,23 +47,24 @@
 
 
 
-	Поля таблицы Comment
+	Поля таблицы Comment:
 
 	а) Id_Comment (PRIMARY KEY)
 
 	б) place_id (INTEGER NOT NULL FOREIGN KEY REFERENCES Place)
 
-	в) description_comment
+	в) description_comment (VARCHAR)
 
-	г)comment_count
+	г)comment_count (INTEGER NOT NULL)
 	
 
-	Поля таблицы Comment
+	Поля таблицы Mark:
 
 	а) Id_mark (PRIMARY KEY)
 
 	б) place_id (INTEGER NOT NULL FOREIGN KEY REFERENCES Place)
 
-	в) value_of_mark
+	в) value_of_mark (INTEGER NOT NULL)
 
-	г)mark_count
+	г)mark_count (INTEGER NOT NULL)
+
